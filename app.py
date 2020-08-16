@@ -10,8 +10,8 @@ class TodoItems(RequestHandler):
 
 class TodoItem(RequestHandler):
   def post(self):
-    items.append(self.request.body)
-    self.write({'message': json.loads(self.request.body)})
+    items.append(json.loads(self.request.body))
+    self.write({'message': 'new item added'})
 
 def make_app():
   urls = [

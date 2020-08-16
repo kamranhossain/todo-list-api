@@ -1,0 +1,13 @@
+{
+  "python.pythonPath": "/home/k/.local/share/virtualenvs/todo_list_api-EDeW0t3K/bin/activate",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--ignore=F405,F403,W503"
+  ]
+}

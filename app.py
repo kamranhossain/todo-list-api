@@ -12,11 +12,15 @@ class TodoItem(RequestHandler):
   def post(self):
     items.append(json.loads(self.request.body))
     self.write({'message': 'new item added'})
+  
+  def delete(self, id):
+    self.write({'message': id})
 
 def make_app():
   urls = [
     ("/", TodoItems),
-    ("/api/item/", TodoItem)
+    ("/api/item/", TodoItem),
+    (r"/api/item/([^/]+)?", TodoItem)
   ]
   return Application(urls, debug=True)
   

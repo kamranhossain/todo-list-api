@@ -13,7 +13,10 @@ class TodoItem(RequestHandler):
     self.write({'message': self.request.body})
 
 def make_app():
-  urls = [("/", TodoItems)]
+  urls = [
+    ("/", TodoItems),
+    ("/api/item/", TodoItem)
+  ]
   return Application(urls, debug=True)
   
 if __name__ == '__main__':

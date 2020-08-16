@@ -7,6 +7,11 @@ class TodoItems(RequestHandler):
   def get(self):
     self.write({'items': items})
 
+class TodoItem(RequestHandler):
+  def post(self):
+    items.append(self.request.body)
+    self.write({'message': self.request.body})
+
 def make_app():
   urls = [("/", TodoItems)]
   return Application(urls, debug=True)

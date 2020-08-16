@@ -1,3 +1,4 @@
+import json
 from tornado.web import Application, RequestHandler
 from tornado.ioloop import IOLoop
 
@@ -10,7 +11,7 @@ class TodoItems(RequestHandler):
 class TodoItem(RequestHandler):
   def post(self):
     items.append(self.request.body)
-    self.write({'message': self.request.body})
+    self.write({'message': json.loads(self.request.body)})
 
 def make_app():
   urls = [

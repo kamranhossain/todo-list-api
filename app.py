@@ -14,7 +14,10 @@ class TodoItem(RequestHandler):
     self.write({'message': 'new item added'})
   
   def delete(self, id):
-    self.write({'message': id})
+    global items
+    new_items = [item for item in items if item['id'] is not int(id)]
+    items = new_items
+    self.write({'message': 'Item with id %s was deleted' % id})
 
 def make_app():
   urls = [

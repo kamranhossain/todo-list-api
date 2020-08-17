@@ -22,7 +22,6 @@ class TodoItem(RequestHandler):
 def make_app():
   urls = [
     ("/", TodoItems),
-    ("/api/item/", TodoItem),
     (r"/api/item/([^/]+)?", TodoItem)
   ]
   return Application(urls, debug=True)

@@ -9,7 +9,7 @@ class TodoItems(RequestHandler):
     self.write({'items': items})
 
 class TodoItem(RequestHandler):
-  def post(self):
+  def post(self, _):
     items.append(json.loads(self.request.body))
     self.write({'message': 'new item added'})
   
